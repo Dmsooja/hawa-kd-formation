@@ -1,0 +1,45 @@
+{
+  "type": "SharedSlice",
+  "id": "logo_carousel",
+  "name": "LogoCarousel",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Carrousel",
+      "description": "Default variation for a logo carousel with heading and repeatable logo items.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Title"
+          }
+        },
+        "logos": {
+          "type": "Group",
+          "config": {
+            "label": "Logos",
+            "fields": {
+              "logo_image": {
+                "type": "Image",
+                "config": {
+                  "label": "Logo Image"
+                }
+              },
+              "alt_text": {
+                "type": "Text",
+                "config": {
+                  "label": "Alternative Text"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

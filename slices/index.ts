@@ -2,4 +2,10 @@
 
 import dynamic from "next/dynamic";
 
-export const components = {};
+export const components = {
+  feature_list_with_icon: dynamic(() => import("./TrainingList")),
+  feature_overview_cta: dynamic(() => import("./TrainingOverview")),
+  hero_cta: dynamic(() => import("./Hero")),
+  location_list: dynamic(() => import("./LocationList")),
+  logo_carousel: dynamic(() => import("./LogoCarousel")),
+};

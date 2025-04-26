@@ -1,0 +1,40 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Thumb"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Non exercitation dolore ullamco non irure officia deserunt voluptate ex nostrud veniam cupidatat. Aliqua eiusmod laboris culpa pariatur reprehenderit sint aliqua cillum nulla. Id consequat reprehenderit voluptate cupidatat fugiat ea do pariatur irure."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"key": "b4bbecac-c3c0-4252-9550-12244fd4cc2f",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "fog"
+				}
+			}
+		},
+		"items": []
+	}
+]

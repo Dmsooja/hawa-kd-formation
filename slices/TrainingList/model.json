@@ -1,0 +1,67 @@
+{
+  "type": "SharedSlice",
+  "id": "feature_list_with_icon",
+  "name": "TrainingList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Vertical Cards",
+      "description": "Features or services list with icons, section heading and CTA button.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "section_title": {
+          "type": "StructuredText",
+          "config": {
+            "single": "heading2",
+            "label": "Section Title"
+          }
+        },
+        "features": {
+          "type": "Group",
+          "config": {
+            "label": "Features",
+            "fields": {
+              "icon": {
+                "type": "Image",
+                "config": {
+                  "constraint": {
+                    "height": 128,
+                    "width": 128
+                  },
+                  "label": "Icon"
+                }
+              },
+              "feature_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4,strong",
+                  "label": "Feature Title"
+                }
+              },
+              "feature_description": {
+                "type": "StructuredText",
+                "config": {
+                  "multi": "paragraph,strong,em,hyperlink",
+                  "label": "Feature Description"
+                }
+              }
+            }
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "",
+            "allowText": true,
+            "repeat": false,
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

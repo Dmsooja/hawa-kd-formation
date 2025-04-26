@@ -1,0 +1,32 @@
+{
+  "type": "SharedSlice",
+  "id": "location_list",
+  "name": "LocationList",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "description": "Standard arrangement of location items in a row.",
+      "version": "initial",
+      "imageUrl": "",
+      "docURL": "...",
+      "primary": {
+        "locations": {
+          "type": "Group",
+          "config": {
+            "label": "Locations",
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label"
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
