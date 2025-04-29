@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+/* @font-face {
+    font-family: "Copy";
+    src:
+        local("Montserrat-SemiBold"),
+        url("../assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Heading";
+    src:
+        local("Montserrat-Bold"),
+        url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+} */
