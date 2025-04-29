@@ -1,15 +1,48 @@
 @import "tailwindcss";
 
+@theme {
+    --color-primary-red: #F02E3E;
+    --color-deep-blue: #272C56;
+    --color-light-gray: #F2F2F2;
+    --color-transparent: transparent;
+    --text-xs: 0.75rem;
+    --text-xs--line-height: 1.125rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: 1.3125rem;
+    --text-base: 1rem;
+    --text-base--line-height: 1.5rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: 1.6875rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: 1.875rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: 2.25rem;
+    --text-3xl: 2rem;
+    --text-3xl--line-height: 3rem;
+    --text-4xl: 2.5rem;
+    --text-4xl--line-height: 3.5rem;
+    --text-5xl: 3rem;
+    --text-5xl--line-height: 3.5rem;
+    --text-6xl: 3.75rem;
+    --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1.2;
+    --text-8xl: 6rem;
+    --text-8xl--line-height: 1;
+    --text-9xl: 8rem;
+    --text-9xl--line-height: 1;
+}
+
 /* @font-face {
     font-family: "Copy";
     src:
-        local("Montserrat-SemiBold"),
+        local("Montserrat-SemiBold")
         url("../assets/fonts/Montserrat-SemiBold.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Heading";
     src:
-        local("Montserrat-Bold"),
+        local("Montserrat-Bold")
         url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
 } */

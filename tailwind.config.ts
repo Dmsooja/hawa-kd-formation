@@ -1,8 +1,7 @@
-import type { Config } from "tailwindcss";
 const { fontFamily } = require("tailwindcss/defaultTheme");
 const Unfonts = require("unplugin-fonts");
 
-const config: Config = {
+const config = {
   content: [
     './slices/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -25,14 +24,6 @@ const config: Config = {
         "7xl": ["4.5rem", { lineHeight: "1.1" }],
         "8xl": ["6rem", { lineHeight: "1" }],
         "9xl": ["8rem", { lineHeight: "1" }],
-      },
-      colors: {
-        white: "#FFFFFF",
-        black: "#000000",
-        "deep-blue": "#272C56",
-        "light-blue": "#F6F8FD",
-        red: "#F41717",
-        transparent: "transparent"
       },
       borderRadius: {
         "4xl": "2rem",
