@@ -7,6 +7,8 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { Header } from "../../components/Header";
 import Head from "next/head";
+import { PageContainer } from "@/components/PageContainer";
+import { reverseLocaleLookup } from "@/i18n";
 
 type PageParams = { lang: string };
 
@@ -15,21 +17,28 @@ type PageParams = { lang: string };
 // const languages = await getLanguages(page, client, locales);
 
 export default async function Home({
-  params: { lang },
+  params,
 }: {
-  params: { lang: string };
+  params: Promise<PageParams>;
 }) {
+  const { lang } = await params;
+
   const client = createClient();
 
   const [page, settings] = await Promise.all([
-    client.getSingle<Content.HomeDocument>("home", { lang }),
-    client.getSingle<Content.SettingsDocument>("settings", { lang }),
+    client.getSingle<Content.HomeDocument>("home", {
+      lang: reverseLocaleLookup(lang),
+    }),
+    client.getSingle<Content.SettingsDocument>("settings", {
+      lang: reverseLocaleLookup(lang),
+    }),
   ]);
+
   return (
-    <>
+    <PageContainer>
       <Header settings={settings} />
       <SliceZone slices={page.data.slices} components={components} />
-    </>
+    </PageContainer>
   );
 }
 
@@ -38,9 +47,12 @@ export async function generateMetadata({
 }: {
   params: PageParams;
 }): Promise<Metadata> {
+  const { lang } = await params;
+
   const client = createClient();
+
   const page = await client
-    .getSingle("home", { lang: params.lang })
+    .getSingle("home", { lang: reverseLocaleLookup(lang) })
     .catch(() => notFound());
 
   return {
