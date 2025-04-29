@@ -11,6 +11,18 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "background": {
+          "type": "Select",
+          "config": {
+            "label": "Background",
+            "placeholder": "Background color",
+            "options": [
+              "White",
+              "Light Gray"
+            ],
+            "default_value": "White"
+          }
+        },
         "section_title": {
           "type": "StructuredText",
           "config": {

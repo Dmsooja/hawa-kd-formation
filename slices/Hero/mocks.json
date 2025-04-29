@@ -26,13 +26,18 @@
 				]
 			},
 			"button": {
-				"__TYPE__": "LinkContent",
 				"key": "b4bbecac-c3c0-4252-9550-12244fd4cc2f",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev",
 					"text": "fog"
 				}
+			},
+			"background": {
+				"__TYPE__": "FieldContent",
+				"value": "White",
+				"type": "Select"
 			}
 		},
 		"items": []

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { SliceContainer } from "@/components/SliceContainer";
 
 /**
  * Props for `FeatureOverviewCta`.
@@ -13,13 +14,10 @@ export type FeatureOverviewCtaProps =
  */
 const FeatureOverviewCta: FC<FeatureOverviewCtaProps> = ({ slice }) => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
+    <SliceContainer background={slice.primary.background}>
       Placeholder component for feature_overview_cta (variation:{" "}
       {slice.variation}) Slices
-    </section>
+    </SliceContainer>
   );
 };
 

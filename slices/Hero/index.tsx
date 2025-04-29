@@ -1,6 +1,9 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { SliceContainer } from "@/components/SliceContainer";
+import { Button } from "@/components/Button";
+import { RichText } from "@/components/RichText";
 
 /**
  * Props for `HeroCta`.
@@ -12,12 +15,11 @@ export type HeroCtaProps = SliceComponentProps<Content.HeroCtaSlice>;
  */
 const HeroCta: FC<HeroCtaProps> = ({ slice }) => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for hero_cta (variation: {slice.variation}) Slices
-    </section>
+    <SliceContainer background={slice.primary.background}>
+      <RichText field={slice.primary.title} />
+      <RichText field={slice.primary.description} />
+      <Button field={slice.primary.button} color="red" variant="solid" />
+    </SliceContainer>
   );
 };
 

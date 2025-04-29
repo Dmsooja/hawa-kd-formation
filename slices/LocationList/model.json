@@ -11,6 +11,18 @@
       "imageUrl": "",
       "docURL": "...",
       "primary": {
+        "background": {
+          "type": "Select",
+          "config": {
+            "label": "Background",
+            "placeholder": "Background color",
+            "options": [
+              "White",
+              "Light Gray"
+            ],
+            "default_value": "White"
+          }
+        },
         "locations": {
           "type": "Group",
           "config": {
@@ -19,7 +31,8 @@
               "label": {
                 "type": "Text",
                 "config": {
-                  "label": "Label"
+                  "label": "Label",
+                  "placeholder": ""
                 }
               }
             }

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { SliceContainer } from "@/components/SliceContainer";
 
 /**
  * Props for `LocationList`.
@@ -12,13 +13,11 @@ export type LocationListProps = SliceComponentProps<Content.LocationListSlice>;
  */
 const LocationList: FC<LocationListProps> = ({ slice }) => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
+    <SliceContainer background={slice.primary.background}>
+
       Placeholder component for location_list (variation: {slice.variation})
       Slices
-    </section>
+    </SliceContainer>
   );
 };
 

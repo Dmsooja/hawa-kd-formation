@@ -411,6 +411,17 @@ export interface FeatureListWithIconSliceDefaultPrimaryFeaturesItem {
  */
 export interface FeatureListWithIconSliceDefaultPrimary {
   /**
+   * Background field in *TrainingList → Vertical Cards → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Background color
+   * - **Default Value**: White
+   * - **API ID Path**: feature_list_with_icon.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background: prismic.SelectField<"White" | "Light Gray", "filled">;
+
+  /**
    * Section Title field in *TrainingList → Vertical Cards → Primary*
    *
    * - **Field Type**: Title
@@ -503,6 +514,17 @@ export interface FeatureOverviewCtaSliceDefaultPrimaryFeaturesItem {
  */
 export interface FeatureOverviewCtaSliceDefaultPrimary {
   /**
+   * Background field in *TrainingOverview → Horizontal Cards → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Background color
+   * - **Default Value**: White
+   * - **API ID Path**: feature_overview_cta.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background: prismic.SelectField<"White" | "Light Gray", "filled">;
+
+  /**
    * Title field in *TrainingOverview → Horizontal Cards → Primary*
    *
    * - **Field Type**: Title
@@ -590,6 +612,17 @@ export type FeatureOverviewCtaSlice = prismic.SharedSlice<
  */
 export interface HeroCtaSliceDefaultPrimary {
   /**
+   * Background field in *Hero → Cta → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Background color
+   * - **Default Value**: White
+   * - **API ID Path**: hero_cta.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background: prismic.SelectField<"White" | "Light Gray", "filled">;
+
+  /**
    * Title field in *Hero → Cta → Primary*
    *
    * - **Field Type**: Title
@@ -670,6 +703,17 @@ export interface LocationListSliceDefaultPrimaryLocationsItem {
  */
 export interface LocationListSliceDefaultPrimary {
   /**
+   * Background field in *LocationList → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Background color
+   * - **Default Value**: White
+   * - **API ID Path**: location_list.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background: prismic.SelectField<"White" | "Light Gray", "filled">;
+
+  /**
    * Locations field in *LocationList → Default → Primary*
    *
    * - **Field Type**: Group
@@ -741,6 +785,17 @@ export interface LogoCarouselSliceDefaultPrimaryLogosItem {
  * Primary content in *LogoCarousel → Carrousel → Primary*
  */
 export interface LogoCarouselSliceDefaultPrimary {
+  /**
+   * Background field in *LogoCarousel → Carrousel → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: Background color
+   * - **Default Value**: White
+   * - **API ID Path**: logo_carousel.default.primary.background
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background: prismic.SelectField<"White" | "Light Gray", "filled">;
+
   /**
    * Title field in *LogoCarousel → Carrousel → Primary*
    *
