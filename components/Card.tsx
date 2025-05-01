@@ -2,6 +2,8 @@ import { FeatureListWithIconSliceDefaultPrimaryFeaturesItem } from "@/prismicio-
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 import { RichText } from "./RichText";
+import { isFilled } from "@prismicio/client";
+import { Icon } from "./Icon";
 
 export function Card({
   item,
@@ -20,7 +22,18 @@ export function Card({
         className,
       )}
     >
-        <PrismicNextImage field={item.icon} className="w-32 h-32 text-center"/>
+      {item.icon.url?.includes(".svg") ? (
+        <div className="h-32 w-32">
+          <Icon
+            src={item.icon.url}
+            size={128}
+            color="deep-blue"
+            fallback={item.icon}
+          />
+        </div>
+      ) : (
+        <PrismicNextImage field={item.icon} className="h-32 w-32 text-center" />
+      )}
       <div>
         <RichText field={item.feature_title} />
         <RichText field={item.feature_description} />
