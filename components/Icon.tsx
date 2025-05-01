@@ -11,21 +11,22 @@ import type { VariantProps } from "class-variance-authority";
 const iconStyles = cva("", {
   variants: {
     size: {
-      32: "w-8 h-8",
-      48: "w-12 h-12",
-      64: "w-16 h-16",
-      96: "w-24 h-24",
-      128: "w-32 h-32",
-      auto: "w-auto"
+      32: "w-4 h-4 md:w-8 md:h-8",
+      48: "w-8 h-8 md:w-12 md:h-12",
+      64: "w-12 h-12 md:w-16 md:h-16",
+      80: "w-16 h-16 md:w-20 md:h-20",
+      96: "w-20 h-20 md:w-24 md:h-24",
+      128: "w-24 h-24 md:w-32 md:h-32",
+      auto: "w-auto",
     },
     color: {
       "deep-blue": "text-deep-blue",
-      gray: "text-gray-darker",
+      red: "text-primary-red"
     },
   },
   defaultVariants: {
     size: 48,
-    color: "deep-blue",
+    color: "red",
   },
 });
 
@@ -51,33 +52,44 @@ export type IconProps = {
 
 export const Icon = ({ className, src, size, color, fallback }: IconProps) => {
   const processSVG = (code: string) => {
-    return code
+    // get values of width and height attributes
+    const [, width, height] = code.match(
+      /<svg.*?width="(.*?)" height="(.*?)"/,
+    ) || ["", "", ""];
+
+    // check if viewBox is present
+    const viewBox = code.match(/viewBox="(.*?)"/);
+
+    let transformedCode = code
       .replace(/fill=".*?"/g, 'fill="currentColor"')
       .replace(/style=".*?"/g, (style) =>
-        style.includes("fill:") ? style.replace(/fill:.*?;/g, "") : style
+        style.includes("fill:") ? style.replace(/fill:.*?;/g, "") : style,
       );
+    // if no viewBox is present, and we have width and height attributes, add viewBox
+    if (!viewBox && width && height) {
+      transformedCode = transformedCode.replace(
+        /<svg/,
+        `<svg viewBox="0 0 ${width} ${height}"`,
+      );
+    }
+
+    return transformedCode;
   };
 
   return (
     <SVG
       className={cx(iconStyles({ size, color }), className)}
       src={src}
-      // preProcessor={(code) => code.replace(/fill=".*?"/g, 'fill="currentColor"')}
       preProcessor={processSVG}
+      onError={(error) => console.log("ICON ERROR", error.message)}
     >
       {fallback && (
-        <div
-          className={cx(
-            "relative rounded-xl overflow-hidden",
-            iconStyles({ size, color }),
-            className
-          )}
-        >
+        <div className={cx(iconStyles({ size, color }), className)}>
           <PrismicNextImage
             className={cx(
-              "z-10 relative",
+              "relative z-10",
               iconStyles({ size, color }),
-              className
+              className,
             )}
             field={fallback}
             fallbackAlt=""
