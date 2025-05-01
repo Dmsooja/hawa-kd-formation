@@ -57,7 +57,7 @@ export function RichText({
     heading4: ({ children }) => (
       <h4
         className={clsx(
-          `font-heading mt-4 break-words text-4xl text-deep-blue first:mt-0`,
+          `font-heading font-bold mt-4 break-words text-2xl text-deep-blue first:mt-0`,
           classNames,
         )}
       >
