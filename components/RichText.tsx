@@ -27,7 +27,7 @@ export function RichText({
     heading1: ({ children }) => (
       <h1
         className={clsx(
-          `font-heading break-words text-7xl text-deep-blue`,
+          `font-heading text-deep-blue break-words text-4xl font-bold md:text-7xl`,
           classNames,
         )}
       >
@@ -37,7 +37,7 @@ export function RichText({
     heading2: ({ children }) => (
       <h2
         className={clsx(
-          `font-heading mb-4 break-words text-6xl text-deep-blue`,
+          `font-heading text-deep-blue mb-4 break-words text-4xl font-bold md:text-6xl`,
           classNames,
         )}
       >
@@ -47,7 +47,7 @@ export function RichText({
     heading3: ({ children }) => (
       <h3
         className={clsx(
-          `font-heading mt-4 break-words text-5xl text-deep-blue first:mt-0`,
+          `font-heading text-deep-blue mt-4 break-words text-3xl font-bold first:mt-0 md:text-5xl`,
           classNames,
         )}
       >
@@ -57,7 +57,7 @@ export function RichText({
     heading4: ({ children }) => (
       <h4
         className={clsx(
-          `font-heading font-bold mt-4 break-words text-2xl text-deep-blue first:mt-0`,
+          `font-heading text-deep-blue mt-4 break-words text-2xl font-bold first:mt-0`,
           classNames,
         )}
       >
@@ -67,7 +67,7 @@ export function RichText({
     preformatted: ({ children }) => (
       <pre
         className={clsx(
-          "bg-gray-dark border-gray-darker mb-7 mt-3 whitespace-break-spaces rounded-lg p-4 font-code text-sm text-deep-blue shadow-lg",
+          "bg-gray-dark border-gray-darker text-deep-blue mb-7 mt-3 whitespace-break-spaces rounded-lg p-4 font-code text-sm shadow-lg",
           classNames,
         )}
       >
@@ -77,7 +77,7 @@ export function RichText({
     paragraph: ({ children }) => (
       <p
         className={clsx(
-          "mb-2 break-words font-copy text-2xl text-deep-blue",
+          "text-deep-blue mb-2 break-words font-copy text-lg font-medium md:text-2xl",
           classNames,
         )}
       >
@@ -107,7 +107,7 @@ export function RichText({
     listItem: ({ children }) => (
       <li
         className={clsx(
-          "ml-5 list-outside list-disc pl-2 text-deep-blue last:mb-0",
+          "text-deep-blue ml-5 list-outside list-disc pl-2 last:mb-0",
           classNames,
         )}
       >
@@ -117,7 +117,7 @@ export function RichText({
     oListItem: ({ children }) => (
       <li
         className={clsx(
-          "ml-5 list-outside list-decimal pl-2 text-deep-blue last:mb-0",
+          "text-deep-blue ml-5 list-outside list-decimal pl-2 last:mb-0",
           classNames,
         )}
       >

@@ -6,10 +6,10 @@ import { PrismicLink } from "@prismicio/react";
 
 const baseStyles: clsxT.ClassDictionary = {
   solid:
-    " group inline-flex items-center justify-center rounded-full py-2 px-4 text-2xl font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2",
+    "w-fit group inline-flex items-center justify-center rounded-full py-2 px-4 text-lg md:text-2xl font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2",
   outline:
-    "group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-2xl focus:outline-none",
-  link: "group inline-flex items-center justify-center py-2 px-4 text-2xl font-semibold underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out",
+    "w-fit group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-lg md:text-2xl font-semibold focus:outline-none",
+  link: "w-fit group inline-flex items-center justify-center py-2 px-4 text-lg md:text-2xl font-semibold underline underline-offset-8 hover:underline-offset-4 transition-all duration-300 ease-in-out",
 };
 
 const variantStyles: clsxT.ClassDictionary = {

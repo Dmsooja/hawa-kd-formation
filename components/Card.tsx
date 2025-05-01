@@ -2,7 +2,6 @@ import { FeatureListWithIconSliceDefaultPrimaryFeaturesItem } from "@/prismicio-
 import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 import { RichText } from "./RichText";
-import { isFilled } from "@prismicio/client";
 import { Icon } from "./Icon";
 
 export function Card({
@@ -17,24 +16,30 @@ export function Card({
   return (
     <div
       className={clsx(
-        "mx-auto flex w-full flex-row gap-x-16 rounded-2xl px-12 py-20",
+        "mx-auto flex w-full flex-row flex-wrap gap-x-16 gap-y-8 rounded-2xl px-12 py-20 shadow-xl md:flex-nowrap",
         background === "Light Gray" ? "bg-white" : "bg-light-gray",
         className,
       )}
     >
       {item.icon.url?.includes(".svg") ? (
-        <div className="h-32 w-32">
+        <div className="mx-auto h-32 w-32 self-center">
           <Icon
             src={item.icon.url}
             size={128}
-            color="deep-blue"
+            color="red"
             fallback={item.icon}
           />
         </div>
       ) : (
-        <PrismicNextImage field={item.icon} className="h-32 w-32 text-center" />
+        <PrismicNextImage
+          field={item.icon}
+          imgixParams={{
+            monochrome: "F02E3E",
+          }}
+          className="mx-auto h-32 w-32 self-center"
+        />
       )}
-      <div>
+      <div className="flex flex-col gap-y-4 text-center md:gap-y-2 md:text-left">
         <RichText field={item.feature_title} />
         <RichText field={item.feature_description} />
       </div>
