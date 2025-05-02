@@ -28,43 +28,8 @@ import {
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
-
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { Button } from "./Button";
 
 type HeaderProps = {
   settings: SettingsDocument;
@@ -83,11 +48,10 @@ export function Header({ settings }: HeaderProps) {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img
-              alt=""
-              src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+          <a href="/" className="-m-1.5 p-1.5">
+            <span className="sr-only">{settings.data.website_name}</span>
+            <PrismicNextImage
+              field={settings.data.icon}
               className="h-8 w-auto"
             />
           </a>
@@ -103,8 +67,8 @@ export function Header({ settings }: HeaderProps) {
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900">
+          {/* <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-lg/6 font-semibold text-gray-900">
               Product
               <ChevronDownIcon
                 aria-hidden="true"
@@ -120,7 +84,7 @@ export function Header({ settings }: HeaderProps) {
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-lg/6 hover:bg-gray-50"
                   >
                     <div className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
                       <item.icon
@@ -146,7 +110,7 @@ export function Header({ settings }: HeaderProps) {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-lg/6 font-semibold text-gray-900 hover:bg-gray-100"
                   >
                     <item.icon
                       aria-hidden="true"
@@ -157,22 +121,25 @@ export function Header({ settings }: HeaderProps) {
                 ))}
               </div>
             </PopoverPanel>
-          </Popover>
-
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
-            Company
-          </a>
+          </Popover> */}
+          {settings.data.menu.map((link) => (
+            <PrismicNextLink
+              key={link.key}
+              field={link}
+              className="text-lg/6 font-semibold text-gray-900"
+            />
+          ))}
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm/6 font-semibold text-gray-900">
+          {/* <a href="#" className="text-lg/6 font-semibold text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </a> */}
+          <Button
+            field={settings.data.call_to_action}
+            color="red"
+            variant="solid"
+            className="text-lg/6! font-semibold"
+          />
         </div>
       </nav>
       <Dialog
@@ -183,11 +150,10 @@ export function Header({ settings }: HeaderProps) {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+            <a href="/" className="-m-1.5 p-1.5">
+              <span className="sr-only">{settings.data.website_name}</span>
+              <PrismicNextImage
+                field={settings.data.icon}
                 className="h-8 w-auto"
               />
             </a>
@@ -203,7 +169,7 @@ export function Header({ settings }: HeaderProps) {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <Disclosure as="div" className="-mx-3">
+                {/* <Disclosure as="div" className="-mx-3">
                   <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                     Product
                     <ChevronDownIcon
@@ -223,33 +189,20 @@ export function Header({ settings }: HeaderProps) {
                       </DisclosureButton>
                     ))}
                   </DisclosurePanel>
-                </Disclosure>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
+                </Disclosure> */}
+                {settings.data.menu.map((link) => (
+                  <PrismicNextLink
+                    key={link.key}
+                    field={link}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  />
+                ))}
               </div>
               <div className="py-6">
-                <a
-                  href="#"
+                <PrismicNextLink
+                  field={settings.data.call_to_action}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                />
               </div>
             </div>
           </div>
