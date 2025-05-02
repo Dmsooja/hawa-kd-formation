@@ -769,16 +769,6 @@ export interface LogoCarouselSliceDefaultPrimaryLogosItem {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   logo_image: prismic.ImageField<never>;
-
-  /**
-   * Alternative Text field in *LogoCarousel → Carrousel → Primary → Logos*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: logo_carousel.default.primary.logos[].alt_text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  alt_text: prismic.KeyTextField;
 }
 
 /**

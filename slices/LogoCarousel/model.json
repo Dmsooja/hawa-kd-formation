@@ -38,13 +38,10 @@
               "logo_image": {
                 "type": "Image",
                 "config": {
+                  "constraint": {
+                    "height": 100
+                  },
                   "label": "Logo Image"
-                }
-              },
-              "alt_text": {
-                "type": "Text",
-                "config": {
-                  "label": "Alternative Text"
                 }
               }
             }
