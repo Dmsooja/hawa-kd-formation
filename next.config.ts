@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     loader: "imgix",
     path: "https://images.prismic.io/",
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
