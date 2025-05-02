@@ -6,7 +6,6 @@ import { SliceZone } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { Header } from "../../components/Header";
-import Head from "next/head";
 import { PageContainer } from "@/components/PageContainer";
 import { reverseLocaleLookup } from "@/i18n";
 
@@ -26,12 +25,16 @@ export default async function Home({
   const client = createClient();
 
   const [page, settings] = await Promise.all([
-    client.getSingle<Content.HomeDocument>("home", {
-      lang: reverseLocaleLookup(lang),
-    }),
-    client.getSingle<Content.SettingsDocument>("settings", {
-      lang: reverseLocaleLookup(lang),
-    }),
+    client
+      .getSingle<Content.HomeDocument>("home", {
+        lang: reverseLocaleLookup(lang),
+      })
+      .catch(() => notFound()),
+    client
+      .getSingle<Content.SettingsDocument>("settings", {
+        lang: reverseLocaleLookup(lang),
+      })
+      .catch(() => notFound()),
   ]);
 
   return (

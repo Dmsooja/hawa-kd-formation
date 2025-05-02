@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { headingsFont, copyFont } from "@/assets/fonts";
 import clsx from "clsx";
