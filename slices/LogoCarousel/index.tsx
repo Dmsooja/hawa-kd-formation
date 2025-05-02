@@ -26,7 +26,7 @@ const ScrollContainer = ({
     <div className="relative bg-white px-4 sm:px-6 lg:px-8">
       <button
         onClick={() => scroll(-1280)}
-        className="text-silver-darker absolute left-0 z-10 block"
+        className="text-silver-darker absolute left-0 z-10 hidden md:block"
         style={{ top: "50%", transform: "translateY(-50%)" }}
         aria-label="Scroll left"
       >
@@ -34,7 +34,7 @@ const ScrollContainer = ({
       </button>
       <button
         onClick={() => scroll(1280)}
-        className="text-silver-darker absolute right-0 z-10 block"
+        className="text-silver-darker absolute right-0 z-10 hidden md:block"
         style={{ top: "50%", transform: "translateY(-50%)" }}
         aria-label="Scroll right"
       >
