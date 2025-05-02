@@ -501,12 +501,12 @@ export interface FeatureOverviewCtaSliceDefaultPrimaryFeaturesItem {
   /**
    * Feature Title field in *TrainingOverview → Horizontal Cards → Primary → Features*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: feature_overview_cta.default.primary.features[].feature_title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  feature_title: prismic.KeyTextField;
+  feature_title: prismic.RichTextField;
 }
 
 /**

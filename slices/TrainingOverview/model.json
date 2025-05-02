@@ -26,15 +26,19 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
-            "label": "Title"
+            "label": "Title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading2"
           }
         },
         "subtitle": {
           "type": "StructuredText",
           "config": {
-            "single": "heading2",
-            "label": "Subtitle"
+            "label": "Subtitle",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "heading3"
           }
         },
         "description": {
@@ -56,9 +60,12 @@
                 }
               },
               "feature_title": {
-                "type": "Text",
+                "type": "StructuredText",
                 "config": {
-                  "label": "Feature Title"
+                  "label": "Feature Title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "single": "heading4,strong"
                 }
               }
             }

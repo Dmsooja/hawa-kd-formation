@@ -7,9 +7,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading1",
+						"type": "heading2",
 						"content": {
-							"text": "Buried"
+							"text": "Mixture"
 						}
 					}
 				]
@@ -18,9 +18,9 @@
 				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"type": "heading2",
+						"type": "heading3",
 						"content": {
-							"text": "Industry"
+							"text": "Regular"
 						}
 					}
 				]
@@ -70,9 +70,15 @@
 							[
 								"feature_title",
 								{
-									"__TYPE__": "FieldContent",
-									"value": "species",
-									"type": "Text"
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "heading4",
+											"content": {
+												"text": "Related"
+											}
+										}
+									]
 								}
 							]
 						]
@@ -80,8 +86,8 @@
 				]
 			},
 			"button": {
-				"__TYPE__": "LinkContent",
 				"key": "bc9f9591-4497-4dfc-8708-762ab57baca4",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://google.com",
