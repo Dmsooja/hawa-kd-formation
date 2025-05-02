@@ -2,8 +2,7 @@ import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { SliceContainer } from "@/components/SliceContainer";
-import clsx from "clsx";
-import { Card } from "@/components/Card";
+import { Card } from "./Card";
 import { RichText } from "@/components/RichText";
 import { Button } from "@/components/Button";
 
